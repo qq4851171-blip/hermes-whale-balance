@@ -45,6 +45,13 @@ const CSS = `
 .hermes-whale-foot{display:flex;align-items:center;justify-content:space-between;gap:16px;font-size:10px;color:var(--muted-foreground);opacity:.85}
 .hermes-whale-refresh{cursor:pointer;border:1px solid var(--border);border-radius:8px;padding:3px 9px;font-size:11px;font-weight:600;color:var(--accent);background:transparent}
 .hermes-whale-refresh:hover{background:var(--accent);color:var(--card)}
+/* 会话栏入口:保持与默认导航项同构(16px codicon 图标位 + 纯文字 label)，
+   仅把图标字形的视觉替换为 🐋，对齐/尺寸/行高完全沿用系统默认。 */
+button[data-tip-region]:has(> span[data-tour="sidebar-nav-whale-nav"]) i.codicon-wallet{
+  font-family:'Segoe UI Emoji','Apple Color Emoji','Noto Color Emoji',sans-serif;  /* emoji 字形 */
+  font-size:14px; line-height:1; display:inline-flex; align-items:center; justify-content:center;
+}
+button[data-tip-region]:has(> span[data-tour="sidebar-nav-whale-nav"]) i.codicon-wallet::before{content:'🐋'}
 `
 
 function useBalance(rest) {
@@ -162,7 +169,7 @@ export default {
       id: 'whale-nav',
       area: SIDEBAR_NAV_AREA,
       order: 90,
-      data: { codicon: 'wallet', label: '🐋 DeepSeek余额', path: '/whale-balance' }
+      data: { codicon: 'wallet', label: 'DeepSeek余额', path: '/whale-balance' }
     })
 
     // 点击会话栏入口后的详情页
