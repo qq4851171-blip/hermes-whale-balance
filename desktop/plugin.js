@@ -46,12 +46,14 @@ const CSS = `
 .hermes-whale-refresh{cursor:pointer;border:1px solid var(--border);border-radius:8px;padding:3px 9px;font-size:11px;font-weight:600;color:var(--accent);background:transparent}
 .hermes-whale-refresh:hover{background:var(--accent);color:var(--card)}
 /* 会话栏入口:保持与默认导航项同构(16px codicon 图标位 + 纯文字 label)，
-   仅把图标字形的视觉替换为 🐋，对齐/尺寸/行高完全沿用系统默认。 */
-button[data-tip-region]:has(> span[data-tour="sidebar-nav-whale-nav"]) i.codicon-wallet{
-  font-family:'Segoe UI Emoji','Apple Color Emoji','Noto Color Emoji',sans-serif;  /* emoji 字形 */
-  font-size:14px; line-height:1; display:inline-flex; align-items:center; justify-content:center;
+   仅把图标字形的视觉替换为 🐋，对齐/尺寸/行高完全沿用系统默认。
+   wallet 图标系统内仅本插件使用，故直接用类名定位，不依赖 DOM 层级/data 属性。 */
+i.codicon-wallet{
+  font-family:'Segoe UI Emoji','Apple Color Emoji','Noto Color Emoji',sans-serif !important;
+  font-size:14px !important; line-height:1 !important;
+  display:inline-flex !important; align-items:center !important; justify-content:center !important;
 }
-button[data-tip-region]:has(> span[data-tour="sidebar-nav-whale-nav"]) i.codicon-wallet::before{content:'🐋'}
+i.codicon-wallet::before{content:'🐋' !important}
 `
 
 function useBalance(rest) {
