@@ -1,0 +1,9 @@
+{
+  "name": "whale-balance",
+  "label": "Whale Balance",
+  "description": "DeepSeek 余额常驻挂件：状态栏余额 pill + 会话栏明细入口",
+  "icon": "Wallet",
+  "version": "1.0.0",
+  "tab": { "path": "/whale-balance", "hidden": true },
+  "api": "plugin_api.py"
+}
