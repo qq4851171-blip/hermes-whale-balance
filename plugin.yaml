@@ -1,0 +1,7 @@
+name: whale-balance
+description: >-
+  DeepSeek 余额常驻挂件（desktop 插件）：状态栏右侧余额 pill + 会话栏左侧明细入口。
+  agent 半提供 /api/plugins/whale-balance/balance 只读后端（余额/今日开销/峰谷），
+  desktop 半用 ctx.rest 消费。密钥不出服务器、不回显。
+version: 1.0.0
+author: admin
